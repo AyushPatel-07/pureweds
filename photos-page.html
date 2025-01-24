@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Gallery</title>
+    <link rel="stylesheet" href="photos-page.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- For Icons -->
+</head>
+<body>
+    <!-- Header -->
+    <header class="head">
+        <a href="#" class="logo"><i class="fas fa-heart"></i>&nbsp;Pure<span>Wed</span>S&nbsp;<i class="fas fa-heart"></i></a>
+        
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about-page.html">About</a>
+            <a href="photos-page.html">Photo</a>
+            <a href="decorection-page.html">Decoration</a>
+            <a href="#food">Food</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div id="menu-bar"><i class="fas fa-bars"></i></div>
+
+    </header>
+    <header class="header">
+        <h1>Wedding Gallery</h1>
+        <p>Explore 100+ stunning wedding moments captured just for you!</p>
+    </header>
+
+    <section class="gallery">
+        <div class="gallery-grid"></div>
+    </section>
+
+    <!-- Pagination -->
+    <div class="pagination">
+        <button onclick="prevPage()">❮ Prev</button>
+        <button onclick="nextPage()">Next ❯</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 PureWeds. All rights reserved.</p>
+    </footer>
+
+    <script>
+let currentPage = 1;
+const photosPerPage = 20; 
+const totalPhotos = 100; 
+
+// Photo data
+const photos = [
+
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+{ src: 'smaple.avif', },
+
+
+];
+
+// Update the gallery dynamically
+function updateGallery() {
+    const galleryGrid = document.querySelector('.gallery-grid');
+    galleryGrid.innerHTML = ''; // Clear previous content
+
+    const startIndex = (currentPage - 1) * photosPerPage;
+    const endIndex = Math.min(startIndex + photosPerPage, photos.length);
+
+    // Generate photo items for the current page
+    const currentPhotos = photos.slice(startIndex, endIndex);
+    currentPhotos.forEach(photo => {
+        const galleryItem = document.createElement('div');
+        galleryItem.classList.add('gallery-item');
+
+        galleryItem.innerHTML = `
+            <img src="${photo.src}" alt="${photo.caption}">
+            <p>${photo.caption}</p>
+        `;
+
+        galleryGrid.appendChild(galleryItem);
+    });
+}
+
+// Pagination controls
+function prevPage() {
+    if (currentPage > 1) {
+        currentPage--;
+        updateGallery();
+        updateButtonStates();
+    }
+}
+
+function nextPage() {
+    if (currentPage < Math.ceil(photos.length / photosPerPage)) {
+        currentPage++;
+        updateGallery();
+        updateButtonStates();
+    }
+}
+
+// Update button states (disable when on first/last page)
+function updateButtonStates() {
+    document.querySelector('button[onclick="prevPage()"]').disabled = currentPage === 1;
+    document.querySelector('button[onclick="nextPage()"]').disabled =
+        currentPage === Math.ceil(photos.length / photosPerPage);
+}
+
+// Initialize the gallery on page load
+document.addEventListener('DOMContentLoaded', () => {
+    updateGallery();
+    updateButtonStates();
+});
+</script>

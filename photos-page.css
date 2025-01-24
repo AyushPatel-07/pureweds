@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --clr1: rgb(50, 115, 220); /* Primary color */
+    --clr2: rgb(236, 68, 90); /* Accent color */
+    --clr3: #fff; /* White */
+    --clr4: #000; /* Black */
+    --clr5: #f4f4f4; /* Light gray */
+    --clr6: #ffcc00; /* Highlight yellow */
+    --primary-gradient: linear-gradient(135deg, #ff758c,#770bf3);
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --accent-color: #bd78ce;
+    --button-hover: #e8477e;
+    --bg-light: #fdf4fc;
+    --shadow: rgba(0, 0, 0, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PT Sans', sans-serif;
+}
+
+body {
+    background: #fdfdfd;
+    color: var(--clr4);
+}
+
+/* Header */
+.head {
+    background: linear-gradient(135deg, var(--clr1), var(--clr2));
+    color: var(--clr3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.navbar a {
+    margin-left: 2rem;
+    font-size: 1.8rem;
+    color: var(--clr3);
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: rgb(88, 38, 117);
+    text-shadow: 0 0 10px rgb(211, 93, 181), 0 0 20px rgb(185, 16, 149);
+}
+
+/* Header Content */
+.header {
+    text-align: center;
+    padding: 100px 20px;
+    background: var(--primary-gradient);
+    color: var(--text-light);
+    animation: slideDown 1.5s ease-in-out;
+}
+
+.header h1 {
+    font-size: 3rem;
+    letter-spacing: 1px;
+}
+
+.header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+/* Gallery Grid */
+.gallery {
+    padding: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item p {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    margin: 0;
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--text-light);
+    font-size: 0.9rem;
+    border-radius: 5px;
+}
+
+/* Pagination Buttons */
+.pagination {
+    text-align: center;
+    margin: 20px 0;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.pagination button {
+    background: var(--accent-color);
+    color: var(--text-light);
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.pagination button:hover {
+    background: var(--button-hover);
+    transform: translateY(-3px);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background: var(--primary-gradient);
+    color: var(--text-light);
+    font-size: 0.9rem;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #menu-bar {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 5%;
+        background: var(--primary-gradient);
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px var(--shadow);
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a {
+        margin: 1rem 0;
+        font-size: 1.5rem;
+    }
+}

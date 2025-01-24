@@ -1,0 +1,122 @@
+/* About Section */
+:root {
+    --clr1: rgb(50, 115, 220); /* Primary color */
+    --clr2: rgb(236, 68, 90); /* Accent color */
+    --clr3: #fff; /* White */
+    --clr4: #000; /* Black */
+    --clr5: #f4f4f4; /* Light gray */
+    --clr6: #ffcc00; /* Highlight yellow */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PT Sans', sans-serif;
+}
+
+body {
+    background: #fdfdfd;
+    color: var(--clr4);
+}
+
+/* Header */
+.head {
+    background: linear-gradient(135deg, var(--clr1), var(--clr2));
+    color: var(--clr3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.navbar a {
+    margin-left: 2rem;
+    font-size: 1.8rem;
+    color: var(--clr3);
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: rgb(88, 38, 117);
+    text-shadow: 0 0 10px rgb(211, 93, 181), 0 0 20px rgb(185, 16, 149);
+}
+.about-section {
+    background-color: #fff5f8; /* Soft pink background */
+    padding: 90px 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+   
+}
+
+.about-section h2 {
+    font-size: 36px;
+    color: #b53864; /* Elegant rose color */
+    margin-bottom: 20px;
+}
+
+.about-tagline {
+    font-size: 18px;
+    font-style: italic;
+    color: #b53864;
+    margin-bottom: 20px;
+}
+
+.about-description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.about-list li {
+    font-size: 16px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.about-closing {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #b53864;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #a13259; /* Darker rose for hover effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}

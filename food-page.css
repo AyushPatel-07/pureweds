@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --clr1: rgb(50, 115, 220); /* Primary color */
+    --clr2: rgb(236, 68, 90); /* Accent color */
+    --clr3: #fff; /* White */
+    --clr4: #000; /* Black */
+    --clr5: #f4f4f4; /* Light gray */
+    --clr6: #ffcc00; /* Highlight yellow */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PT Sans', sans-serif;
+}
+
+body {
+    background: #fdfdfd;
+    color: var(--clr4);
+}
+
+/* Header */
+.head {
+    background: linear-gradient(135deg, var(--clr1), var(--clr2));
+    color: var(--clr3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.navbar a {
+    margin-left: 2rem;
+    font-size: 1.8rem;
+    color: var(--clr3);
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: rgb(88, 38, 117);
+    text-shadow: 0 0 10px rgb(211, 93, 181), 0 0 20px rgb(185, 16, 149);
+}
+.home {
+    background: url(food\ 4.jpg) no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--clr3);
+    padding: 0 2rem;
+}
+
+.home h1 {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.home p {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.search-field {
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border: 1px solid var(--clr3);
+    border-radius: 5px;
+    width: 18rem;
+}
+
+.btn {
+    background: var(--clr2);
+    color: var(--clr3);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: rgb(25, 13, 192);
+}
+.popular-services {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.service-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+}
+
+.service-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.vendor-name {
+    font-size: 1.5rem;
+    margin: 15px 0 10px;
+    color: #555;
+}
+
+.service-price {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #777;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #ff7f50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background-color: #ff5722;
+}
